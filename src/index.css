@@ -5,9 +5,53 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #3d3d3d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #3d3d3d;
+  border-color: #4d4d4d;
+}
+
+button:disabled {
+  background-color: #2d2d2d;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #3d3d3d;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #4d4d4d;
+}
+
+label {
+  color: #cccccc;
+}
+
+input[type="checkbox"] {
+  accent-color: #3d3d3d;
 }
