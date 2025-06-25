@@ -51,8 +51,8 @@ const SendConfirmationScreen: React.FC = () => {
       }}>
         <div style={{ marginBottom: 12 }}><b style={{ color: '#999' }}>Amount:</b> {amount} USDT</div>
         <div style={{ marginBottom: 12 }}><b style={{ color: '#999' }}>Receiver:</b> {receiverId}</div>
-        <div style={{ marginBottom: 12 }}><b style={{ color: '#999' }}>Password Required:</b> {requirePassword ? 'Yes' : 'No'}</div>
-        {requirePassword && <div style={{ marginBottom: 12 }}><b style={{ color: '#999' }}>Password:</b> {password}</div>}
+        <div style={{ marginBottom: 12 }}><b style={{ color: '#999' }}>Pass Phrase Required:</b> {requirePassword ? 'Yes' : 'No'}</div>
+        {requirePassword && <div style={{ marginBottom: 12 }}><b style={{ color: '#999' }}>Pass Phrase:</b> {password}</div>}
       </div>
       
       <div style={{ margin: 20, textAlign: 'center' }}>

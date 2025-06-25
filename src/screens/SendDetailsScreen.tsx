@@ -65,13 +65,13 @@ const SendDetailsScreen: React.FC = () => {
           checked={requirePassword} 
           onChange={e => setRequirePassword(e.target.checked)}
         />
-        Require password to claim
+        Require pass phrase to claim
       </label>
       
       {requirePassword && (
         <input 
           type="text" 
-          placeholder="Password for receiver" 
+          placeholder="Pass phrase for receiver" 
           value={password} 
           onChange={e => setPassword(e.target.value)} 
           style={inputStyle}

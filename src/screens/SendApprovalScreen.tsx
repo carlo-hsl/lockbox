@@ -68,6 +68,12 @@ const SendApprovalScreen: React.FC = () => {
             <div style={{ color: '#666' }}>To</div>
             <div style={{ color: '#fff', fontSize: 14 }}>Lockbox Smart Contract</div>
           </div>
+          {requirePassword && (
+            <div style={{ marginBottom: 12 }}>
+              <div style={{ color: '#666' }}>Pass Phrase</div>
+              <div style={{ color: '#fff', fontSize: 14 }}>{password}</div>
+            </div>
+          )}
           <div>
             <div style={{ color: '#666' }}>Network Fee</div>
             <div style={{ color: '#fff', fontSize: 14 }}>~$2.50</div>

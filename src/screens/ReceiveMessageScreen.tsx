@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const MOCK_PASSPHRASE = "crypto123";
+
 const ReceiveMessageScreen: React.FC = () => {
   const navigate = useNavigate();
   const [isClaiming, setIsClaiming] = useState(false);
+  const [passPhrase, setPassPhrase] = useState("");
+  const [error, setError] = useState("");
 
   const handleClaim = () => {
+    setError("");
+    if (passPhrase !== MOCK_PASSPHRASE) {
+      setError("Incorrect pass phrase. Please try again.");
+      return;
+    }
     setIsClaiming(true);
     setTimeout(() => {
-      navigate('/receive/claim-success');
+      navigate('/receiver/home');
     }, 2000);
   };
 
@@ -55,12 +64,33 @@ const ReceiveMessageScreen: React.FC = () => {
           <div style={{ color: '#28a745', fontWeight: 'bold', fontSize: 22, marginBottom: 8 }}>1,000 USDT</div>
           <div style={{ color: '#999', fontSize: 13, marginBottom: 8 }}>On Tron Network</div>
           <div style={{ color: '#aaa', fontSize: 13, marginBottom: 8 }}>
-            💬 "Here's the payment for the project. Password: <b>crypto123</b>"
+            💬 "Here's the payment for the project. Pass phrase: <b>crypto123</b>"
           </div>
         </div>
+        <input
+          type="text"
+          placeholder="Enter pass phrase to claim"
+          value={passPhrase}
+          onChange={e => setPassPhrase(e.target.value)}
+          style={{
+            width: '100%',
+            maxWidth: 320,
+            padding: 12,
+            margin: '8px 0',
+            fontSize: 16,
+            borderRadius: 8,
+            background: '#232323',
+            border: '1px solid #3d3d3d',
+            color: '#fff',
+          }}
+          disabled={isClaiming}
+        />
+        {error && (
+          <div style={{ color: '#ff4444', marginBottom: 8, fontSize: 14 }}>{error}</div>
+        )}
         <button
           onClick={handleClaim}
-          disabled={isClaiming}
+          disabled={isClaiming || !passPhrase}
           style={{
             width: '100%',
             maxWidth: 320,
@@ -93,7 +123,7 @@ const ReceiveMessageScreen: React.FC = () => {
           )}
         </button>
         <div style={{ color: '#999', fontSize: 12, marginTop: 12, textAlign: 'center' }}>
-          🔒 This is a secure message from Lockbox. Never share your private keys or passwords with anyone.
+          🔒 This is a secure message from Lockbox. Never share your private keys or pass phrases with anyone.
         </div>
       </div>
       <style>

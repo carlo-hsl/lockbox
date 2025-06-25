@@ -1,16 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const ClaimSuccessScreen: React.FC = () => {
   const navigate = useNavigate();
-
-  // Auto-navigate back to main app after 3 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate('/');
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [navigate]);
 
   return (
     <div style={{

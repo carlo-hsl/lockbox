@@ -9,6 +9,10 @@ import SendSuccessScreen from "./screens/SendSuccessScreen";
 import SendConfirmationScreen from "./screens/SendConfirmationScreen";
 import ReceiveMessageScreen from "./screens/ReceiveMessageScreen";
 import ClaimSuccessScreen from "./screens/ClaimSuccessScreen";
+import ClaimLandingScreen from "./screens/ClaimLandingScreen";
+import ReceiverRegisterScreen from "./screens/ReceiverRegisterScreen";
+import ReceiverLoginScreen from "./screens/ReceiverLoginScreen";
+import ReceiverHomeScreen from "./screens/ReceiverHomeScreen";
 
 function App() {
   return (
@@ -23,6 +27,10 @@ function App() {
         <Route path="/send/confirmation" element={<SendConfirmationScreen />} />
         <Route path="/receive/message" element={<ReceiveMessageScreen />} />
         <Route path="/receive/claim-success" element={<ClaimSuccessScreen />} />
+        <Route path="/claim" element={<ClaimLandingScreen />} />
+        <Route path="/claim/register" element={<ReceiverRegisterScreen />} />
+        <Route path="/claim/login" element={<ReceiverLoginScreen />} />
+        <Route path="/receiver/home" element={<ReceiverHomeScreen />} />
       </Routes>
     </Router>
   );
