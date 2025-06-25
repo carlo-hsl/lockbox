@@ -70,7 +70,7 @@ const SendDetailsScreen: React.FC = () => {
       
       {requirePassword && (
         <input 
-          type="password" 
+          type="text" 
           placeholder="Password for receiver" 
           value={password} 
           onChange={e => setPassword(e.target.value)} 
