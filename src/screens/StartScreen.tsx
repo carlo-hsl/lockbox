@@ -45,6 +45,25 @@ const StartScreen: React.FC = () => {
       >
         Receive (coming soon)
       </button>
+      
+      {/* Demo Button */}
+      <div style={{ marginTop: 32, textAlign: 'center' }}>
+        <div style={{ color: '#999', marginBottom: 8, fontSize: 14 }}>Demo</div>
+        <button 
+          style={{ 
+            padding: 12, 
+            fontSize: 14,
+            borderRadius: 6,
+            background: '#1a1a1a',
+            border: '1px solid #3d3d3d',
+            color: '#999',
+            cursor: 'pointer'
+          }} 
+          onClick={() => navigate('/receive/message')}
+        >
+          View Receive Message Demo
+        </button>
+      </div>
     </div>
   );
 };

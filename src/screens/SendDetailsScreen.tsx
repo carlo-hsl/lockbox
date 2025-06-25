@@ -12,7 +12,7 @@ const SendDetailsScreen: React.FC = () => {
   const handleContinue = (e: React.FormEvent) => {
     e.preventDefault();
     if (!amount || !receiverId || (requirePassword && !password) || !confirmed) return;
-    navigate("/send/success", { state: { amount, requirePassword, password, receiverId } });
+    navigate("/send/approve", { state: { amount, requirePassword, password, receiverId } });
   };
 
   const inputStyle = {
