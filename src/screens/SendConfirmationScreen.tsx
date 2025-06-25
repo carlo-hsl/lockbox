@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import QRCode from "qrcode.react";
 
 const SendConfirmationScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -93,6 +94,10 @@ const SendConfirmationScreen: React.FC = () => {
           >
             {copied ? 'Copied!' : 'Copy'}
           </button>
+        </div>
+        <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ color: '#999', fontSize: 13, marginBottom: 8 }}>Or scan QR code:</div>
+          <QRCode value={shareUrl} size={120} bgColor="#2d2d2d" fgColor="#4a9eff" includeMargin={true} />
         </div>
       </div>
       
